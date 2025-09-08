@@ -1,16 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        car car1 = new car(); 
-        car1.displayInfo();
+        Drone drone1 = new Drone();
+        drone1.displayInfo();
 
         System.out.println("--------------------");
 
-        car car2 = new car("Black", "Arle-011", "CHS-456789"); 
-        car2.displayInfo();
+        Drone drone2 = new Drone("White", "DJI-Mini3", "DRN-123456");
+        drone2.displayInfo();
 
         System.out.println("--------------------");
 
-        car car3 = new car("CHS-987654"); 
-        car3.displayInfo();
+        Drone drone3 = new Drone("DRN-999999");
+        drone3.displayInfo();
     }
 }

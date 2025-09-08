@@ -1,4 +1,4 @@
-public class Main {
+public class Main2 {
     public static void main(String[] args) {
         Drone drone1 = new Drone();
         drone1.displayInfo();
@@ -14,3 +14,4 @@ public class Main {
         drone3.displayInfo();
     }
 }
+

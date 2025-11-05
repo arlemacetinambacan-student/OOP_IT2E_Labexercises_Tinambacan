@@ -11,7 +11,7 @@ public class Arithmeticgame extends JFrame implements ActionListener {
     private ButtonGroup group;
     private int correct = 0, incorrect = 0;
     private char operation = ' ';
-    private Random rand = new Random(); // 👈 Added for random numbers
+    private Random rand = new Random(); 
 
     public Arithmeticgame() {
         setTitle("Arithmetic Game");
@@ -20,7 +20,7 @@ public class Arithmeticgame extends JFrame implements ActionListener {
         setLayout(null);
         getContentPane().setBackground(Color.WHITE);
 
-        // Number fields
+        
         num1Field = new JTextField();
         num1Field.setBounds(100, 80, 80, 60);
         num1Field.setFont(new Font("Arial", Font.BOLD, 24));
@@ -81,7 +81,7 @@ public class Arithmeticgame extends JFrame implements ActionListener {
             ops[i].addActionListener(e -> {
                 operation = labels[idx].charAt(0);
                 operatorLabel.setText(String.valueOf(operation));
-                generateRandomNumbers(); // 👈 random numbers when selecting operation
+                generateRandomNumbers(); 
             });
             add(ops[i]);
             group.add(ops[i]);
@@ -117,18 +117,18 @@ public class Arithmeticgame extends JFrame implements ActionListener {
         setVisible(true);
     }
 
-    // ✅ NEW METHOD: Generates random numbers automatically
+    
     private void generateRandomNumbers() {
         int num1 = rand.nextInt(10) + 1; // 1–10
         int num2 = rand.nextInt(10) + 1; // 1–10
 
-        // Avoid divide by zero
+        
         if (operation == '÷' && num2 == 0)
             num2 = 1;
 
         num1Field.setText(String.valueOf(num1));
         num2Field.setText(String.valueOf(num2));
-        answerField.setText(""); // clear previous answer
+        answerField.setText(""); 
     }
 
     @Override
@@ -154,7 +154,7 @@ public class Arithmeticgame extends JFrame implements ActionListener {
             else
                 incorrectLabel.setText(String.valueOf(++incorrect));
 
-            // 🟩 Automatically generate new random numbers after submitting
+            
             generateRandomNumbers();
 
         } catch (NumberFormatException ex) {
@@ -166,3 +166,4 @@ public class Arithmeticgame extends JFrame implements ActionListener {
         new Arithmeticgame();
     }
 }
+
